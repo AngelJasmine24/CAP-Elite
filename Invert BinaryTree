@@ -1,0 +1,18 @@
+class Solution {
+    public void postOrder(TreeNode t){
+        if(t==null){
+            return ;
+        }  
+            TreeNode temp;
+            temp = t.left;
+            t.left = t.right;
+            t.right = temp;
+            postOrder(t.left);
+            postOrder(t.right);
+    }
+    public TreeNode invertTree(TreeNode root) {
+        postOrder(root);
+        return root;
+
+    }
+}
