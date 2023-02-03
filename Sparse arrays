@@ -1,0 +1,28 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+    public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+     
+         int count=0;
+    ArrayList<Integer> result = new ArrayList<>(queries.size());
+    for(String qString: queries){
+        for(String str: strings){
+            if(qString.equals(str)){
+                count+=1;
+            }
+            else{
+                count+=0;
+            }
+        }
+            result.add(count);
+            count=0;
+        }
+    return result;
+}
+}
