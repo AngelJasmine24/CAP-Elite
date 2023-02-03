@@ -1,0 +1,23 @@
+class Result {
+public static String timeConversion(String s) {
+      
+        int hInt = Integer.parseInt(s.substring(0,2));
+        
+        String time = s.substring(8);
+        time = time.toLowerCase();
+        
+        boolean night = time.equals("pm");
+        
+        if(night){
+            if(hInt != 12){ 
+                hInt += 12;
+                return "" + hInt + s.substring(2,8);
+            }
+        } else{
+            if(hInt == 12){ 
+                return "00" + s.substring(2,8);
+            }
+        }
+        return s.substring(0,8);
+    }
+}
