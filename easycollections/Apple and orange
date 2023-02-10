@@ -1,0 +1,30 @@
+   public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+    List<Integer>li=new ArrayList<>(apples.size());
+    List<Integer>li1=new ArrayList<>(oranges.size());
+        int m=apples.size();
+        int n=oranges.size();
+    for(int i=0;i<m;i++){
+        li.add(apples.get(i)+a);       
+    }
+       
+      for(int j=0;j<n;j++){
+        li1.add(oranges.get(j)+b);       
+    }
+    
+        int count1 =0;
+        int count2 =0;
+        for(int l=0;l<m;l++){
+            if(li.get(l)>=s && li.get(l)<=t){
+                count1++;
+            }
+                
+        }
+        for(int k=0;k<n;k++){
+            if(li1.get(k)>=s && li1.get(k)<=t){
+                count2++;
+            }
+        }
+        System.out.println(count1);
+        System.out.println(count2);
+    }
+}
