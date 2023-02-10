@@ -1,0 +1,39 @@
+class Result {
+
+    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+              
+        List<List<Integer>> arr = new ArrayList<>();
+        for (int i=0;i<n;i++) {
+            arr.add(new ArrayList<>());
+        }
+
+        int lastAnswer = 0;
+
+        List<Integer> answerArray = new ArrayList<>();
+
+        for (List<Integer> query : queries) {
+
+            if (query.get(0).equals(1)) {
+               
+                int idx = ( query.get(1) ^ lastAnswer) % n;
+
+                arr.get(idx).add( query.get(2) );
+
+
+            } else {
+          
+                int idx = ( query.get(1) ^ lastAnswer) % n;
+
+                lastAnswer = arr.get(idx).get( query.get(2) % arr.get(idx).size() );
+
+                answerArray.add(lastAnswer);
+
+            }
+
+        }
+
+
+        return answerArray;
+    }
+
+}
