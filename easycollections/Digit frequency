@@ -1,0 +1,24 @@
+
+int main() 
+
+{ 
+    char s[1000],i;
+    int a,j;
+    scanf("%s",s);
+    for(i=48;i<58;i++)
+    {   
+        a=0;
+        for(j=0;j<strlen(s);j++)
+        {
+          if(s[j]==i)
+          {
+              a++;
+          }
+         
+        }
+      printf("%d ",a);
+    }
+  return 0;
+
+}
+   
